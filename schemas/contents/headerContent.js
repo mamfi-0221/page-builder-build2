@@ -17,16 +17,23 @@ export default {
             type: 'string'
         },
         {
-            name: 'addImageWithText',
-            title: 'Add Image with Text',
-            type: 'reference',
-            to: [{ type: 'addImageText' }]
-        },
-        {
-            name: 'addNavigation',
-            title: 'Add Navigation',
-            type: 'reference',
-            to: [{ type: 'addNavMenu' }]
+            name: 'addBrand',
+            title: 'Add Brand',
+            type: 'image',
+            fields: [
+                {
+                    name: 'alt',
+                    type: 'string',
+                    title: 'Alternative text',
+                    description: 'Important for SEO and accessiblity.',
+                    options: {
+                        isHighlighted: true
+                    },
+                },
+            ],
+            options: {
+                hotspot: true
+            }
         },
         {
             name: 'addSocial',

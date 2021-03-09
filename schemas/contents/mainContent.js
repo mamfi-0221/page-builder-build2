@@ -1,31 +1,29 @@
 /*
-*  This is a sub schema of top level schema `Page Template`
+*  This is a sub schema of top level schema `mainContents` in mainPage.
+*  This shows the items user can select/add from when modifying the main page.
 */
 
 export default {
-    name: 'templateContent',
-    title: 'Template Content',
+    name: 'mainContent',
+    title: 'Main Content',
     type: 'object',
     fields: [
         {
-            name: 'templateName',
-            title: 'Template Name',
+            name: 'mainContentName',
+            title: 'Content Name',
             description: 'Add a name for the content you will select.',
             type: 'string'
         },
         {
-            name: 'templateElements',
+            name: 'mainContentItems',
             description: 'Elements are created at the `Page Content` tab.',
             type: 'reference',
             to: [
-              { type: 'addNavMenu' },
               { type: 'addHeader' },
               { type: 'addFooter' },
               { type: 'addTable' },
               { type: 'addTextOnly' },
-              { type: 'addImageOnly' },
-              { type: 'addImageText' },
-              { type: 'addSocialLink' }
+              { type: 'addImageOnly' }
             ]      
         }
     ]

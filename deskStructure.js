@@ -1,7 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
 import { FiFilePlus, 
-         FiLayout, 
-         FiEdit,
+         FiGrid,
          FiMenu,
          FiChevronsUp,
          FiChevronsDown,
@@ -13,7 +12,7 @@ import { FiFilePlus,
          FiHome } from "react-icons/fi"
 
 const hiddenDocTypes = (listItem) => 
-!['pageTemplate', 
+!['mainPage', 
    'createPage', 
    'addImageText', 
    'addNavMenu', 
@@ -30,17 +29,17 @@ export default () =>
      .items([
        S.documentListItem()
         .title('Main Page')
-        .schemaType('createPage')
+        .schemaType('mainPage')
         .icon(FiHome)
         .child(
           S.document()
-            .schemaType('createPage')
+            .schemaType('mainPage')
             .documentId('mainPage')
             .views([S.view.form()])
         ),
        S.listItem()
         .title('Page Content')
-        .icon(FiEdit)
+        .icon(FiGrid)
         .child(
            S.list()
             .title('Content Selection')
@@ -51,13 +50,6 @@ export default () =>
                  .icon(FiImage)
                  .child(
                     S.documentTypeList('addImageOnly').title('Added Images')
-                ),
-                S.listItem()
-                 .title('Image with Text')
-                 .schemaType('addImageText')
-                 .icon(FiClipboard)
-                 .child(
-                    S.documentTypeList('addImageText').title('Added Images with Text')
                 ),
                 S.listItem()
                  .title('Navigation Menus')
@@ -106,16 +98,16 @@ export default () =>
                 )
             ])
         ),
-       S.listItem()
-        .title('Page Template')
-        .schemaType('pageTemplate')
-        .icon(FiLayout)
-        .child(
-          S.documentList('pageTemplate')
-           .title('All templates')
-           .menuItems(S.documentTypeList('pageTemplate').getMenuItems())
-           .filter('_type == "pageTemplate"')
-        ),
+      //  S.listItem()
+      //   .title('Page Template')
+      //   .schemaType('pageTemplate')
+      //   .icon(FiLayout)
+      //   .child(
+      //     S.documentList('pageTemplate')
+      //      .title('All templates')
+      //      .menuItems(S.documentTypeList('pageTemplate').getMenuItems())
+      //      .filter('_type == "pageTemplate"')
+      //   ),
        S.listItem()
         .title('Create Page')
         .schemaType('createPage')

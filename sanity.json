@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "Page Builder v.2"
-  },
   "api": {
     "projectId": "ybil9n7j",
     "dataset": "production"
+  },
+  "project": {
+    "name": "Page Builder v.2"
   },
   "plugins": [
     "@sanity/base",

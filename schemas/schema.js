@@ -5,19 +5,19 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Import document schemas
-import pageTemplate from './pageTemplate'
+import mainPage from './mainPage'
 import createPage from './createPage'
 import addFooter from './contents/footerContent'
 import addHeader from './contents/headerContent'
 import addImageOnly from './contents/imageOnly'
-import addImageText from './contents/imageText'
 import addNavMenu from './contents/navMenu'
 import addTable from './contents/tableContent'
 import addTextOnly from './contents/textOnly'
 import addSocialLink from './contents/socialLinks'
 
 // import object schemas
-import templateContent from './contents/pageTempElements'
+import pageContent from './contents/pageContent'
+import mainContent from './contents/mainContent'
 import navMenuItems from './contents/navMenuItems'
 import addFacebook from './contents/socialLinks/addFacebook'
 import addInstagram from './contents/socialLinks/addInstagram'
@@ -35,12 +35,11 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     // The following are document types
-    pageTemplate,
+    mainPage,
     createPage,
     addFooter,
     addHeader,
     addImageOnly,
-    addImageText,
     addNavMenu,
     addTable,
     addTextOnly,
@@ -48,7 +47,8 @@ export default createSchema({
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    templateContent,
+    pageContent,
+    mainContent,
     navMenuItems,
     addFacebook,
     addInstagram,

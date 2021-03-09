@@ -20,6 +20,10 @@ export default {
             name: 'menuItems',
             title: 'Menu Items',
             description: 'Add the pages you want to link using this menu.',
+            validation: Rule => [
+                Rule.max(5).warning('Are you sure you want more than 5 items?'),
+                Rule.unique().error('You have duplicate menu items'),
+            ],
             type: 'array',
             of: [{ type: 'navMenuItems' }]
         }
