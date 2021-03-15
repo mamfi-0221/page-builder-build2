@@ -8,7 +8,7 @@ export default {
     name: 'addHeader',
     title: 'Add Header',
     icon: FiChevronsUp,
-    type: 'document',
+    type: 'object',
     fields:[
         {
             name: 'headerName',
@@ -17,34 +17,29 @@ export default {
             type: 'string'
         },
         {
-            name: 'addBrand',
-            title: 'Add Brand',
-            type: 'image',
-            fields: [
-                {
-                    name: 'alt',
-                    type: 'string',
-                    title: 'Alternative text',
-                    description: 'Important for SEO and accessiblity.',
-                    options: {
-                        isHighlighted: true
-                    },
-                },
-            ],
-            options: {
-                hotspot: true
-            }
-        },
-        {
-            name: 'addSocial',
-            title: 'Add Social Links',
+            name: 'addHeaderTemplate',
+            title: 'Header Templates',
+            description: 'Select a template for your header.',
             type: 'reference',
-            to: [{ type: 'addSocialLink' }]
+            to: [{ type: 'headerTemplate' }]
         },
         {
-            name: 'addJustText',
-            title: 'Add Just Text',
-            type: 'string'
+            name: 'modifyTemplate',
+            title: 'Modify Template',
+            type: 'headerSections'
         }
-    ]
+    ],
+    preview: {
+        select: {
+            title: 'headerName',
+            media: 'headerTemplate.addHeaderTemplate',
+        },
+        prepare(selection){
+            const {title, media} = selection
+            return{
+                title: title,
+                media: media
+            }
+        }
+    }
 }

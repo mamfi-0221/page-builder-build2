@@ -4,46 +4,25 @@
 */
 
 export default {
-    name: 'mainPage',
-    title: 'Main page',
+    name: 'yourWebsite',
+    title: 'Your website',
     type: 'document',
     fields: [
         {
-            name: 'pageTitle',
-            title: 'Page Title',
-            description: 'Add a name to your landing page.',
+            name: 'websiteName',
+            title: 'Website Name',
+            description: 'Add a name to your website.',
             type: 'string'
         },
         {
-            name: 'url',
-            title: 'URL',
-            type: 'url',
-            description: 'The main site url. Used to create canonical url'
-        },
-        {
-            name: 'mainNavigation',
-            title: 'Main Navigation',
-            description: 'Add the pages you want to link to the main page.',
-            validation: Rule => [
-                Rule.max(5).warning('Are you sure you want more than 5 items?'),
-                Rule.unique().error('You have duplicate menu items'),
-            ],
-            type: 'array',
-            of: [
-                { 
-                    name: 'linkPage',
-                    title: 'Link Page',
-                    type: 'reference', 
-                    to: [{ type: 'createPage' }]
-                }
-            ]
-        },
-        {
-            name: 'mainContents',
-            title: 'Main Contents',
-            description: 'Select content you want for this template.',
-            type: 'array', //this shows a dropdown of contents user can select from 
-            of: [{ type: 'mainContent' }]
+            name: 'addPages',
+            title: 'Add Pages',
+            description: 'Add the created pages you wish to include for this website.',
+            type: 'array', 
+            of: [{ 
+                type: 'reference',
+                to: [{ type: 'createPage' }]
+            }]
         }
     ]
 }

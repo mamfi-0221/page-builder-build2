@@ -2,6 +2,7 @@
 *   This schema document will be used to create the pages to structure your content. 
 */
 import { FiFilePlus } from "react-icons/fi"
+import React from 'react'
 
 export default {
     name: 'createPage',
@@ -14,20 +15,13 @@ export default {
             title: 'Page Name',
             description: 'Add a name for this page. Example: `About Us`',
             type: 'string',
-            validation: Rule => Rule.custom(name => {
-                if (typeof name === 'undefined') {
-                    return true //allow undefined values to prevent error
-                }
-                if (name.match(/Home|Main|Landing/gi)) {
-                   return "Please be more creative. Main page already exists."
-                }   
-                return true  
-            })
+            validation: Rule => Rule.required()
         },
         {
-            name: 'slug',
-            title: 'Slug',
+            name: 'pageSlugGenerator',
+            title: 'Page Slug Generator',
             type: 'slug',
+            description: `Click "Generate". The 'slug' is part of the website url.`,
             validation: Rule => Rule.required(),
             options: {
                 source: 'pageName',
@@ -36,11 +30,16 @@ export default {
         },
         {
             name: 'addContent',
-            title: 'Add Content',
-            description: `Select content you want for this page. 
-                          To create content, go to the 'Create Content' tab.`,
-            type: 'array', //this shows a dropdown of contents user can select from 
-            of: [{ type: 'pageContent' }]
+            title: 'Add content for this page.',
+            type: 'array',
+            of: [
+                { type: 'addNavMenu' },
+                { type: 'addHeader' },
+                { type: 'addFooter' },
+                { type: 'portfolio' },
+                { type: 'blog' },
+                { type: 'form' }
+            ]
         }
     ]
 }

@@ -14,7 +14,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/color-input",
-    "datatable"
+    "datatable",
+    "@sanity/dashboard"
   ],
   "env": {
     "development": {

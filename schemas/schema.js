@@ -5,27 +5,38 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Import document schemas
-import mainPage from './mainPage'
+import yourWebsite from './mainPage'
 import createPage from './createPage'
 import addFooter from './contents/footerContent'
 import addHeader from './contents/headerContent'
-import addImageOnly from './contents/imageOnly'
+import portfolio from './contents/portfolio'
 import addNavMenu from './contents/navMenu'
-import addTable from './contents/tableContent'
-import addTextOnly from './contents/textOnly'
+import blog from './contents/blog'
 import addSocialLink from './contents/socialLinks'
+import form from './contents/form'
 
-// import object schemas
-import pageContent from './contents/pageContent'
-import mainContent from './contents/mainContent'
-import navMenuItems from './contents/navMenuItems'
+// import object content schemas
 import addFacebook from './contents/socialLinks/addFacebook'
 import addInstagram from './contents/socialLinks/addInstagram'
 import addTwitter from './contents/socialLinks/addTwitter'
 import addLinkedIn from './contents/socialLinks/addLinkedIn'
 import addMoreLinks from './contents/socialLinks/addMoreLinks'
 
-import textImageContent from './contents/richtextImage'
+//import template and section schemas
+import blogTemplate from './contentTemplates/blog/blogTemplate'
+import blogSections from './contentTemplates/blog/blogSection'
+import portfolioTemplate from './contentTemplates/portfolio/portfolioTemplate'
+import portfolioSection from './contentTemplates/portfolio/portfolioSection'
+import portfolioImage from './contentTemplates/portfolio/portfolioImage'
+import headerTemplate from './contentTemplates/header/headerTemplate'
+import headerSections from './contentTemplates/header/headerSections'
+import menuTemplate from './contentTemplates/navigation/menuTemplate'
+import navMenuItems from './contentTemplates/navigation/menuSections'
+import footerTemplate from './contentTemplates/footer/footerTemplate'
+import footerSections from './contentTemplates/footer/footerSections'
+import formSection from './contentTemplates/form/formSection'
+import formTemplate from './contentTemplates/form/formTemplate'
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -35,26 +46,36 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     // The following are document types
-    mainPage,
+    yourWebsite,
     createPage,
     addFooter,
     addHeader,
-    addImageOnly,
+    portfolio,
     addNavMenu,
-    addTable,
-    addTextOnly,
+    blog,
     addSocialLink,
+    form,
 
-    // When added to this list, object types can be used as
-    // { type: 'typename' } in other document schemas
-    pageContent,
-    mainContent,
-    navMenuItems,
+    // object (content) types
     addFacebook,
     addInstagram,
     addTwitter,
     addLinkedIn,
     addMoreLinks,
-    textImageContent,
+
+    // object (template) types
+    blogSections,
+    blogTemplate,
+    portfolioSection,
+    portfolioTemplate,
+    portfolioImage,
+    headerSections,
+    headerTemplate,
+    navMenuItems,
+    menuTemplate,
+    footerSections,
+    footerTemplate,
+    formSection, 
+    formTemplate
   ]),
 })

@@ -8,24 +8,40 @@ export default {
     name: 'addNavMenu',
     title: 'Add Navigation Menu',
     icon: FiMenu,
-    type: 'document',
+    type: 'object',
     fields: [
         {
             name: 'menuName',
             title: 'Menu Name',
-            description: 'Add a name to this navigation to describe what it will be for. Example: `NavMenu for About Us`',
+            description: 'Add a name to quickly identify what this navigation menu is for.',
             type: 'string'
         },
         {
-            name: 'menuItems',
-            title: 'Menu Items',
-            description: 'Add the pages you want to link using this menu.',
-            validation: Rule => [
-                Rule.max(5).warning('Are you sure you want more than 5 items?'),
-                Rule.unique().error('You have duplicate menu items'),
-            ],
-            type: 'array',
-            of: [{ type: 'navMenuItems' }]
+            name: 'addMenuTemplate',
+            title: 'Menu Template',
+            description: 'Select a template for your navigation menu.',
+            type: 'reference',
+            weak: true,
+            to: [{ type: 'menuTemplate' }]
+        },
+        {
+            name: 'modifyMenu',
+            title: 'Modify Menu Template',
+            type: 'navMenuItems'
         }
-    ]
+    ],
+    preview: {
+        select: { 
+            title: 'menuName',
+            media: 'menuTemplate.templateImg' 
+        },
+        prepare(selection) {
+            const {title, media} = selection
+
+            return {
+                title: title,
+                media: media
+            }
+        }
+    }
 }

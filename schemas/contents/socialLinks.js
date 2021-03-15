@@ -12,7 +12,7 @@ export default {
     name: 'addSocialLink',
     title: 'Add Social Link',
     icon: FiMessageCircle,
-    type: 'document',
+    type: 'object',
     fields: [
         {
             name: 'title',

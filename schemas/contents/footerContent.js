@@ -8,7 +8,7 @@ export default {
     name: 'addFooter',
     title: 'Add Footer',
     icon: FiChevronsDown,
-    type: 'document',
+    type: 'object',
     fields: [
         {
             name: 'footerName',
@@ -17,15 +17,32 @@ export default {
             type: 'string'
         },
         {
-            name: 'addJustText',
-            title: 'Add Just Text',
-            type: 'string',
+            name: 'addFooterTemplate',
+            title: 'Footer Template',
+            description: 'Select a template for your footer',
+            type: 'reference',
+            to: [{ type: 'footerTemplate' }]
         },
         {
-            name: 'addSocial',
-            title: 'Add Social Links',
-            type: 'reference',
-            to: [{ type: 'addSocialLink' }]
+            name: 'modifyTemplate',
+            title: 'Modify Footer Template',
+            type: 'footerSections'
         }
-    ]
+    ],
+    preview: 
+    {
+        select: 
+        {
+            title: 'footerName',
+            media: 'addFooterTemplate.footerTemplate'
+        },
+        prepare(selection)
+        {
+            const {title, media} = selection
+            return{
+                title: title,
+                media: media
+            }
+        }
+    }
 }
