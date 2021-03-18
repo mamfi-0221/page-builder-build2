@@ -6,7 +6,7 @@ import { FiChevronsDown } from "react-icons/fi"
 
 export default {
     name: 'addFooter',
-    title: 'Add Footer',
+    title: 'Footer',
     icon: FiChevronsDown,
     type: 'object',
     fields: [

@@ -24,7 +24,7 @@ export default {
             to: [{ type: 'blogTemplate' }]
         },
         {
-            name: 'modifyBlog',
+            name: 'modifyTemplate',
             title: 'Modify Blog Template',
             type: 'blogSection'
         }

@@ -9,6 +9,13 @@ export default {
     title: 'Page',
     icon: FiFilePlus,
     type: 'document',
+    fieldsets: [
+        {
+            name: 'setNavMenu',
+            title: 'Set Navigation Menu',
+            type: 'string'        
+        }
+    ],
     fields:[
         {
             name: 'pageName',
@@ -29,11 +36,26 @@ export default {
             }
         },
         {
+            name: 'navMenuTemplate',
+            title: 'Select Template',
+            description: 'Select a template for your navigation menu.',
+            fieldset: 'setNavMenu',
+            type: 'reference',
+            to: [{ type: 'menuTemplate' }]
+        },
+        {
+            name: 'navigationMenu',
+            title: 'Navigation Menu',
+            description: 'Go to Navigation Menu tab if you want to create a navigation menu for this page.',
+            fieldset: 'setNavMenu',
+            type: 'reference',
+            to: [{ type: 'addNavMenu' }]
+        },
+        {
             name: 'addContent',
             title: 'Add content for this page.',
             type: 'array',
             of: [
-                { type: 'addNavMenu' },
                 { type: 'addHeader' },
                 { type: 'addFooter' },
                 { type: 'portfolio' },

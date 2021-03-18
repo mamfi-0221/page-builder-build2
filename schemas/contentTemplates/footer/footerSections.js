@@ -4,18 +4,11 @@ export default {
     type: 'object',
     fields: [
         {
-            name: 'itemName',
-            title: 'Footer name',
-            type: 'string'
-        },
-        {
             name: 'addBrand',
-            title: 'Add Brand',
-            description: 'Add a logo or picture to brand your page.',
-            type: 'image',
-            options: {
-                hotspot: true
-            }
+            title: 'Add Brand/Logo content',
+            description: 'Select from the brands/logos created at Page Builder > "Brand/Logo Content" section.',
+            type: 'reference',
+            to: [{ type: 'brandContent' }]
         },
         {
             name: 'addSubtitle',

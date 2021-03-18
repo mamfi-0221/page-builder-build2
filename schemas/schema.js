@@ -5,7 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Import document schemas
-import yourWebsite from './mainPage'
+import mainPage from './mainPage'
 import createPage from './createPage'
 import addFooter from './contents/footerContent'
 import addHeader from './contents/headerContent'
@@ -14,6 +14,7 @@ import addNavMenu from './contents/navMenu'
 import blog from './contents/blog'
 import addSocialLink from './contents/socialLinks'
 import form from './contents/form'
+import brandContent from './contents/brandContent'
 
 // import object content schemas
 import addFacebook from './contents/socialLinks/addFacebook'
@@ -46,7 +47,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     // The following are document types
-    yourWebsite,
+    mainPage,
     createPage,
     addFooter,
     addHeader,
@@ -55,6 +56,7 @@ export default createSchema({
     blog,
     addSocialLink,
     form,
+    brandContent,
 
     // object (content) types
     addFacebook,

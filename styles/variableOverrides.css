@@ -1,0 +1,20 @@
+/* override any of the available CSS variables by declaring them on the :root pseudo class and assigning them new values */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+:root {
+  --brand-primary: #130e76;
+  --brand-secondary: #5b90c7;
+  --font-family-base: "Poppins";
+
+  /* Body */
+  --body-bg: white;
+  --body-text: black;
+
+  /* Main navigation */
+  --main-navigation-color: black;
+  --main-navigation-color--inverted: white;
+  --main-navigation-color--inverted-muted: rgb(210, 187, 13);
+
+  /* "Default" button */
+  --default-button-color: black;
+}

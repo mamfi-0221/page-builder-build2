@@ -24,7 +24,7 @@ export default {
             to: [{ type: 'formTemplate' }]
         },
         {
-            name: 'modifyForm',
+            name: 'modifyTemplate',
             title: 'Modify Form Template',
             type: 'formSection'
         }

@@ -16,6 +16,11 @@ export default {
             type: 'string'
         },
         {
+            name: 'headerSubtitle',
+            title: 'Subtitle Text',
+            type: 'string'
+        },
+        {
             name: 'imageContent',
             title: 'Image Content',
             type: 'array',

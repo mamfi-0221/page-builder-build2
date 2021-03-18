@@ -2,6 +2,7 @@ export default {
     name: 'blogTemplate',
     title: 'Blog Template',
     type: 'object',
+    __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
     fields: [
         {
             name: 'templateName',

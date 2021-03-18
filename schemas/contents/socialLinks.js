@@ -10,7 +10,7 @@ import { FiMessageCircle,
 
 export default {
     name: 'addSocialLink',
-    title: 'Add Social Link',
+    title: 'Social Link',
     icon: FiMessageCircle,
     type: 'object',
     fields: [

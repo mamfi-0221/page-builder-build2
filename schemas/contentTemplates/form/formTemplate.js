@@ -2,6 +2,7 @@ export default {
     name: 'formTemplate',
     title: 'Form Template',
     type: 'document',
+    __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
     fields: [
         {
             name: 'templateName',

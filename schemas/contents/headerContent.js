@@ -6,7 +6,7 @@ import { FiChevronsUp } from "react-icons/fi"
 
 export default {
     name: 'addHeader',
-    title: 'Add Header',
+    title: 'Header',
     icon: FiChevronsUp,
     type: 'object',
     fields:[

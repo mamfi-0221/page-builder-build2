@@ -6,9 +6,9 @@ import { FiMenu } from "react-icons/fi"
 
 export default {
     name: 'addNavMenu',
-    title: 'Add Navigation Menu',
+    title: 'Navigation Menu',
     icon: FiMenu,
-    type: 'object',
+    type: 'document',
     fields: [
         {
             name: 'menuName',
@@ -17,23 +17,24 @@ export default {
             type: 'string'
         },
         {
-            name: 'addMenuTemplate',
-            title: 'Menu Template',
-            description: 'Select a template for your navigation menu.',
+            name: 'addBrand',
+            title: 'Add Brand/Logo content',
+            description: 'Select from the brands/logos created at "Brand/Logo Content" section.',
             type: 'reference',
-            weak: true,
-            to: [{ type: 'menuTemplate' }]
+            to: [{ type: 'brandContent' }]
         },
         {
-            name: 'modifyMenu',
-            title: 'Modify Menu Template',
-            type: 'navMenuItems'
+            name: 'items',
+            title: 'Items',
+            description: 'Add web pages as navigation items',
+            type: 'array',
+            of: [{ type: 'navMenuItems' }]
         }
     ],
     preview: {
         select: { 
             title: 'menuName',
-            media: 'menuTemplate.templateImg' 
+            media: 'addBrand.addImage' 
         },
         prepare(selection) {
             const {title, media} = selection

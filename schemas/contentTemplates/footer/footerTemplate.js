@@ -2,6 +2,7 @@ export default {
     name: 'footerTemplate',
     title: 'Footer Template',
     type: 'object',
+    __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
     fields: [
         {
             name: 'footerName',

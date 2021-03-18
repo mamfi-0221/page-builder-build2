@@ -2,6 +2,7 @@ export default {
     name: 'headerTemplate',
     title: 'Header Template',
     type: 'document',
+    __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
     fields: [
         {
             name: 'templateName',
