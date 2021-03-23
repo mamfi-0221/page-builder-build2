@@ -2,6 +2,7 @@
 *  This schema is used to structure content on your web page.
 *  It references content items created in `Create Content`.
 */
+import { template1, template2 } from "./contentTemplates/navigation/navigation_template/navigation"
 
 export default {
     name: 'mainPage',
@@ -23,12 +24,25 @@ export default {
             type: 'string'
         },
         {
-            name: 'navMenuTemplate',
-            title: 'Select Template',
+            name: 'navMenuTemplates',
+            title: 'Navigation Menu Templates',
             description: 'Select a template for your navigation menu.',
             fieldset: 'setNavMenu',
-            type: 'reference',
-            to: [{ type: 'menuTemplate' }]
+            type: 'visualOptions',
+            options: {
+                showTooltip: true,
+                optionSize: "large",
+                list: {
+                    item1: {
+                        name: "Menu Template 1",
+                        icon: template1
+                    },
+                    item2: {
+                        name: "Menu Template 2",
+                        icon: template2
+                    }
+                }
+            }
         },
         {
             name: 'navigationMenu',
@@ -47,8 +61,12 @@ export default {
                 { type: 'addFooter' },
                 { type: 'portfolio' },
                 { type: 'blog' },
-                { type: 'form' }
-            ]
+                { type: 'contactUs' },
+                { type: 'signUp' }
+            ],
+            options: {
+                editModal: 'fullscreen'
+            }
         }
     ]
 }

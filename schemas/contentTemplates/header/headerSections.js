@@ -10,7 +10,8 @@ export default {
         {
             name: 'addSubtitle',
             title: 'Add Header subtitle',
-            type: 'string'
+            type: 'array',
+            of: [{type: 'block'}]
         },
         {
             name: 'addImage',
@@ -19,6 +20,26 @@ export default {
             options: {
                 hotspot: true
             }
+        },
+        {
+            name: 'addButton',
+            title: 'Add Button',
+            type: 'array',
+            of: [{ type: 'headerButton' }]
         }
-    ]
+    ],
+    preview: {
+        select: {
+            blocks: 'addSubtitle',
+        },
+        prepare(value){
+            const block = (value.blocks || []).find(block._type === 'block')
+            return{
+                subtitle: block ? block.children
+                            .filter(child => child._type === 'span')
+                            .map(span => span.text)
+                            .join('') : 'No text',
+            }
+        }
+    }
 }

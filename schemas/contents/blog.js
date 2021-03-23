@@ -3,6 +3,7 @@
 *  This object can be manipulated via the `Page templates` document on your studio.
 */
 import { FiFileText } from "react-icons/fi"
+import { template1, template2, template3 } from '../contentTemplates/blog/blog_template/blog'
 
 export default {
     name: 'blog',
@@ -17,14 +18,31 @@ export default {
             type: 'string'
         },
         {
-            name: 'addBlogTemplate',
-            title: 'Blog Template',
+            name: 'blogTemplate',
+            title: 'Blog Templates',
             description: 'Select a template for your blog content.',
-            type: 'reference',
-            to: [{ type: 'blogTemplate' }]
+            type: 'visualOptions',
+            options: {
+                showTooltip: true,
+                optionSize: "large",
+                list: {
+                    item1: {
+                        name: "Blog Template 1",
+                        icon: template1
+                    },
+                    item2: {
+                        name: "Blog Template 2",
+                        icon: template2
+                    },
+                    item3: {
+                        name: "Blog Template 3",
+                        icon: template3
+                    }
+                }
+            }
         },
         {
-            name: 'modifyTemplate',
+            name: 'modifyBlog',
             title: 'Modify Blog Template',
             type: 'blogSection'
         }
@@ -32,13 +50,16 @@ export default {
     preview: {
         select: {
             title: 'blogName',
-            media: 'addBlogTemplate.blogTemplate' 
+            content: 'modifyBlog.addHeading',
+            author: 'modifyBlog.addAuthor',
+            media: 'modifyBlog.addImage' 
         },
         prepare(selection) {
-            const {title, media} = selection
+            const {title, content, author, media} = selection
 
             return {
                 title: title,
+                subtitle: `${content} by: ${author}`,
                 media: media
             }
         }

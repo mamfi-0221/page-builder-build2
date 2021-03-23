@@ -2,5 +2,5 @@ const sanityClient = require('@sanity/client')
 const clientForPreview = sanityClient({
   projectId: 'ybil9n7j',
   dataset: 'production',
-  token: 'skRTVxlXpbEhnkEfGSJUp8w4VzDgOyvuNQ8fWaMv57r8a2lj81dBGZ9tz63UBDaUnirSmL6dmw3lMqshMfjviXh1wLbW1AvKZifOwjlsXl2yUa8ixpAYTdTwigLAE7By7bdkhDR5UedTUOQwT1A2ZYDbXEcqM2g3yELQ7GkKHZbN6mNRg5zj'
+  token: 'sk44agykXVbG3bkAMJBrSkRObhF4e0J17mMPNUzO8cy9Q95BZdtD8ADm5dthlvGHFNdiOWBFjGvRIKpGpzlNybN5Qbx1hJd5h4X33OwhfwOMhhCmdSM2okGcqjYhYyWmXlPoFQ5lVsOOMSV1rlKqWjcAwOqdlIEsrvT3DZX6a70RrwIvCd5x'
 })

@@ -12,6 +12,22 @@ export default {
             }
         },
         {
+            name: 'addHeading',
+            title: 'Add Heading',
+            type: 'string'
+        },
+        {
+            name: 'addAuthor',
+            title: 'Author',
+            type: 'string'
+        },
+        {
+            name: 'addText',
+            title: 'Blog Content',
+            type: 'array',
+            of: [{ type: 'block' }]
+        },
+        {
             name: 'lastUpdated',
             title: 'Last Updated',
             type: 'date',

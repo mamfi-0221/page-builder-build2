@@ -19,7 +19,10 @@ fields: [
       title: 'Link Page',
       type: 'reference',
       fieldset: 'link',
-      to: [{ type: 'createPage' }]
+      to: [
+        { type: 'createPage' }, 
+        { type: 'mainPage' }
+      ]
     },
     {
         name: 'link',

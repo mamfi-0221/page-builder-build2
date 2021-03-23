@@ -2,7 +2,7 @@
 *   This schema document will be used to create the pages to structure your content. 
 */
 import { FiFilePlus } from "react-icons/fi"
-import React from 'react'
+import { template1, template2 } from "./contentTemplates/navigation/navigation_template/navigation"
 
 export default {
     name: 'createPage',
@@ -36,12 +36,25 @@ export default {
             }
         },
         {
-            name: 'navMenuTemplate',
-            title: 'Select Template',
+            name: 'navMenuTemplates',
+            title: 'Navigation Menu Templates',
             description: 'Select a template for your navigation menu.',
             fieldset: 'setNavMenu',
-            type: 'reference',
-            to: [{ type: 'menuTemplate' }]
+            type: 'visualOptions',
+            options: {
+                showTooltip: true,
+                optionSize: "large",
+                list: {
+                    item1: {
+                        name: "Menu Template 1",
+                        icon: template1
+                    },
+                    item2: {
+                        name: "Menu Template 2",
+                        icon: template2
+                    }
+                }
+            }
         },
         {
             name: 'navigationMenu',
@@ -60,8 +73,12 @@ export default {
                 { type: 'addFooter' },
                 { type: 'portfolio' },
                 { type: 'blog' },
-                { type: 'form' }
-            ]
+                { type: 'contactUs' },
+                { type: 'signUp' }
+            ],
+            options: {
+                editModal: 'fullscreen'
+            }
         }
     ]
 }

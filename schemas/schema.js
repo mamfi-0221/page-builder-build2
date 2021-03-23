@@ -13,7 +13,6 @@ import portfolio from './contents/portfolio'
 import addNavMenu from './contents/navMenu'
 import blog from './contents/blog'
 import addSocialLink from './contents/socialLinks'
-import form from './contents/form'
 import brandContent from './contents/brandContent'
 
 // import object content schemas
@@ -22,21 +21,19 @@ import addInstagram from './contents/socialLinks/addInstagram'
 import addTwitter from './contents/socialLinks/addTwitter'
 import addLinkedIn from './contents/socialLinks/addLinkedIn'
 import addMoreLinks from './contents/socialLinks/addMoreLinks'
+import contactUs from './contents/contactUs'
+import signUp from './contents/signUp'
 
 //import template and section schemas
-import blogTemplate from './contentTemplates/blog/blogTemplate'
 import blogSections from './contentTemplates/blog/blogSection'
-import portfolioTemplate from './contentTemplates/portfolio/portfolioTemplate'
 import portfolioSection from './contentTemplates/portfolio/portfolioSection'
 import portfolioImage from './contentTemplates/portfolio/portfolioImage'
-import headerTemplate from './contentTemplates/header/headerTemplate'
 import headerSections from './contentTemplates/header/headerSections'
-import menuTemplate from './contentTemplates/navigation/menuTemplate'
+import headerButton from './contentTemplates/header/headerButton'
 import navMenuItems from './contentTemplates/navigation/menuSections'
-import footerTemplate from './contentTemplates/footer/footerTemplate'
 import footerSections from './contentTemplates/footer/footerSections'
-import formSection from './contentTemplates/form/formSection'
-import formTemplate from './contentTemplates/form/formTemplate'
+import contactSection from './contentTemplates/contact/contactSection'
+import signUpSection from './contentTemplates/signUp/signUpSection'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -49,13 +46,6 @@ export default createSchema({
     // The following are document types
     mainPage,
     createPage,
-    addFooter,
-    addHeader,
-    portfolio,
-    addNavMenu,
-    blog,
-    addSocialLink,
-    form,
     brandContent,
 
     // object (content) types
@@ -64,20 +54,24 @@ export default createSchema({
     addTwitter,
     addLinkedIn,
     addMoreLinks,
+    addFooter,
+    addHeader,
+    portfolio,
+    addNavMenu,
+    blog,
+    addSocialLink,
+    contactUs,
+    signUp,
 
     // object (template) types
     blogSections,
-    blogTemplate,
     portfolioSection,
-    portfolioTemplate,
     portfolioImage,
     headerSections,
-    headerTemplate,
+    headerButton,
     navMenuItems,
-    menuTemplate,
     footerSections,
-    footerTemplate,
-    formSection, 
-    formTemplate
+    contactSection,
+    signUpSection, 
   ]),
 })

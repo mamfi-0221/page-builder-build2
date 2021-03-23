@@ -3,6 +3,7 @@
  *  This object can be manipulated via the `Page templates` document on your studio. 
  */
 import { FiImage } from "react-icons/fi"
+import { template1, template2, template3 } from '../contentTemplates/portfolio/portfolio_template/portfolio'
 
 export default {
     name: 'portfolio',
@@ -16,14 +17,31 @@ export default {
             type: 'string'
         },
         {
-            name: 'selectTemplate',
-            title: 'Portfolio Template',
+            name: 'portfolioTemplate',
+            title: 'Portfolio Templates',
             description: 'Select a template for your portfolio content.',
-            type: 'reference',
-            to: [{ type: 'portfolioTemplate' }]
+            type: 'visualOptions',
+            options: {
+                showTooltip: true,
+                optionSize: "large",
+                list: {
+                    item1: {
+                        name: "Portfolio Template 1",
+                        icon: template1
+                    },
+                    item2: {
+                        name: "Portfolio Template 2",
+                        icon: template2
+                    },
+                    item3: {
+                        name: "Portfolio Template 3",
+                        icon: template3
+                    }
+                }
+            }
         },
         {
-            name: 'modifyTemplate',
+            name: 'modifyPortfolio',
             title: 'Modify Portfolio Template',
             type: 'portfolioSection'
         }
@@ -31,13 +49,16 @@ export default {
     preview: {
         select: {
         title: 'portfolioName',
-        media: 'selectTemplate.portfolioTemplate' //imageContent thumbnail
+        content: 'modifyPortfolio.headerText',
+        subText: 'modifyPortfolio.headerSubtitle',
+        media: 'modifyPortfolio.imageContent[0].addImage' //imageContent thumbnail
         },
         prepare(selection) {
-            const {title, media} = selection
+            const {title, content, subText, media} = selection
 
             return {
                 title: title,
+                subtitle: `${content} | ${subText}`,
                 media: media
             }
         }

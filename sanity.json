@@ -18,7 +18,8 @@
     "@sanity/dashboard",
     "@sanity/production-preview",
     "dashboard-widget-netlify",
-    "dashboard-widget-document-list"
+    "dashboard-widget-document-list",
+    "visual-options"
   ],
   "env": {
     "development": {

@@ -3,6 +3,7 @@
 *  Multiple instances can be created and may be referenced to.
 */
 import { FiChevronsDown } from "react-icons/fi"
+import { template1, template2, template3 } from '../contentTemplates/footer/footer_template/footer'
 
 export default {
     name: 'addFooter',
@@ -17,14 +18,31 @@ export default {
             type: 'string'
         },
         {
-            name: 'addFooterTemplate',
-            title: 'Footer Template',
-            description: 'Select a template for your footer',
-            type: 'reference',
-            to: [{ type: 'footerTemplate' }]
+            name: 'footerTemplate',
+            title: 'Footer Templates',
+            description: 'Select a template for your footer content.',
+            type: 'visualOptions',
+            options: {
+                showTooltip: true,
+                optionSize: "large",
+                list: {
+                    item1: {
+                        name: "Footer Template 1",
+                        icon: template1,
+                    },
+                    item2: {
+                        name: "Footer Template 2",
+                        icon: template2,
+                    },
+                    item3: {
+                        name: "Footer Template 3",
+                        icon: template3,
+                    }
+                }
+            }
         },
         {
-            name: 'modifyTemplate',
+            name: 'modifyFooter',
             title: 'Modify Footer Template',
             type: 'footerSections'
         }
@@ -34,13 +52,15 @@ export default {
         select: 
         {
             title: 'footerName',
-            media: 'addFooterTemplate.footerTemplate'
+            text: 'modifyFooter.addSubtitle',
+            media: 'modifyFooter.addBrand.addImage'
         },
         prepare(selection)
         {
-            const {title, media} = selection
+            const {title, text, media} = selection
             return{
                 title: title,
+                subtitle: text,
                 media: media
             }
         }

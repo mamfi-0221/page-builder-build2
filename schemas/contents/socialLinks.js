@@ -2,11 +2,7 @@
 *   This schema document enables adding social links such as social media platforms and other content sites. 
 */
 
-import { FiMessageCircle,
-         FiUserPlus,
-         FiFacebook,
-         FiInstagram,
-         FiTwitter } from "react-icons/fi"
+import { FiMessageCircle } from "react-icons/fi"
 
 export default {
     name: 'addSocialLink',
